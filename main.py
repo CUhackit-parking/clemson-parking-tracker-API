@@ -26,10 +26,17 @@ async def increment(lot_name):
     }
     return db.update(updates, lot_name)
 
+@app.patch("/lot/{lot_name}/increment/{num}")
+async def increment(lot_name, num):
+    updates = {
+        "count": db.util.increment(num)
+    }
+    return db.update(updates, lot_name)
+
 @app.patch("/lot/{lot_name}/decrement/")
 async def increment(lot_name):
     updates = {
-        "count": db.util.increment()
+        "count": db.util.increment(-1)
     }
     return db.update(updates, lot_name)
 
