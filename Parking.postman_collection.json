@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "3dbb8a75-1ab5-4c38-94be-7055d7867e0b",
+		"name": "Parking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Map",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increment",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/increment/:lot",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"increment",
+						":lot"
+					],
+					"variable": [
+						{
+							"key": "lot",
+							"value": "C-16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrement Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/decrement/:lot",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"decrement",
+						":lot"
+					],
+					"variable": [
+						{
+							"key": "lot",
+							"value": "C-16"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
