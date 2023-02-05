@@ -20,22 +20,64 @@
 			"response": []
 		},
 		{
-			"name": "Increment",
+			"name": "Reset",
 			"request": {
-				"method": "PATCH",
+				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/increment/:lot",
+					"raw": "{{url}}/reset/",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"increment",
-						":lot"
+						"reset",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Lot",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/lot/:name",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lot",
+						":name"
 					],
 					"variable": [
 						{
-							"key": "lot",
+							"key": "name",
+							"value": "qikb4rgm5u5p"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lot",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/lot/:name",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lot",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
 							"value": "C-16"
 						}
 					]
@@ -44,22 +86,48 @@
 			"response": []
 		},
 		{
-			"name": "Decrement Copy",
+			"name": "Increment",
 			"request": {
 				"method": "PATCH",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/decrement/:lot",
+					"raw": "{{url}}/lot/:name/increment",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"decrement",
-						":lot"
+						"lot",
+						":name",
+						"increment"
 					],
 					"variable": [
 						{
-							"key": "lot",
+							"key": "name",
+							"value": "C-16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrement",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/lot/:name/increment",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lot",
+						":name",
+						"increment"
+					],
+					"variable": [
+						{
+							"key": "name",
 							"value": "C-16"
 						}
 					]

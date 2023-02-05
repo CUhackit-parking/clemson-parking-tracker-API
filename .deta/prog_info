@@ -1,0 +1,1 @@
+{"id":"044d3539-f1a5-4ff5-a879-08e27ac98114","space":51211,"runtime":"python3.9","name":"clemson-parking-tracker-API","path":"xe3vmj","project":"b01e4uo1","account":"144798365827","region":"us-east-1","deps":["fastapi"],"envs":null,"public":true,"log_level":"off","cron":""}
