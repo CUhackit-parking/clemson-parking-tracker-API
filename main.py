@@ -2,6 +2,7 @@ import traceback
 from fastapi import FastAPI, HTTPException
 from fastapi.requests import Request
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import json
 from deta import Deta
 
@@ -14,6 +15,15 @@ async def catch_exceptions_middleware(request: Request, call_next):
 
 app = FastAPI()
 # app.middleware('http')(catch_exceptions_middleware)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 deta = Deta('b01e4uo1_AKg3ZAFjdQkFwrUKxYPwmPRohk85egpb') # configure your Deta project
 db = deta.Base('simpleDB')
@@ -29,7 +39,7 @@ async def increment(lot_name):
 @app.patch("/lot/{lot_name}/increment/{num}")
 async def increment(lot_name, num):
     updates = {
-        "count": db.util.increment(num)
+        "count": db.util.increment(int(num))
     }
     return db.update(updates, lot_name)
 
